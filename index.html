@@ -404,7 +404,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-06-25 00:49:57" itemprop="dateModified" datetime="2022-06-25T00:49:57+08:00">2022-06-25</time>
+                <time title="修改时间：2022-06-25 16:16:45" itemprop="dateModified" datetime="2022-06-25T16:16:45+08:00">2022-06-25</time>
               </span>
 
           
@@ -418,12 +418,13 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <!-- link: qingshanlanshan.xyz -->
-<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>环境：Nginx+Tomcat+JSP+Servlet+MySQL<br>VPS：vultr 上海连接日本服务器的RTT大约130~140<br>域名：namecheap<br>工具：IDEA，VS Code（Remote-SSH extension），Navicat，PuTTY</p>
+          <p>link: <a target="_blank" rel="noopener" href="https://java-web-test.qingshanlanshan.com/">java-web-test</a></p>
+<p>网站没有做加密，请不要输入敏感信息！！！</p>
+<h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><p>环境：Nginx+Tomcat+JSP+Servlet+MySQL<br>VPS：vultr 上海连接日本服务器的RTT大约130~140<br>域名：namecheap<br>工具：IDEA，VS Code（Remote-SSH extension），Navicat，PuTTY</p>
 <h1 id="连接服务器上的MySQL"><a href="#连接服务器上的MySQL" class="headerlink" title="连接服务器上的MySQL"></a>连接服务器上的MySQL</h1><p>在MySQL安装完成后，新建用户并授权<br>在&#x2F;etc&#x2F;mysql&#x2F;mysql.conf.d&#x2F;mysqld.cnf中，修改bind-address &#x3D; 127.0.0.1（或者直接注释掉）<br>开放ufw的3306端口</p>
-<h1 id="Nginx"><a href="#Nginx" class="headerlink" title="Nginx"></a>Nginx</h1><p>将jsp等动态资源通过proxy_pass <a href="http://127.0.0.1:8080反代到Tomcat服务器，而静态资源不经过Tomcat，error">http://127.0.0.1:8080反代到Tomcat服务器，而静态资源不经过Tomcat，error</a> page也直接交给nginx，理论上减轻了服务器的压力，实际上，笑死，我就一个vps，而且vcpu使用率一直个位数……nginx设置完之后记得nginx -s reload</p>
+<h1 id="Nginx"><a href="#Nginx" class="headerlink" title="Nginx"></a>Nginx</h1><p>将jsp等动态资源通过proxy_pass <a href="http://127.0.0.1:8080反代到Tomcat服务器，而静态资源不经过Tomcat，error">http://127.0.0.1:8080反代到Tomcat服务器，而静态资源不经过Tomcat，error</a> page也直接交给nginx，理论上减轻了服务器的压力，实际上，笑死，我就一个vps，而且vcpu使用率一直个位数……nginx设置完之后记得nginx -s reload<br>如果出现静态资源不显示的问题，试试在nginx的conf里，把user改成root</p>
 <p>jsp和servlet比较严重的问题是我不会js和json…用别的凑合下好像还行？</p>
-<h1 id="Tomcat"><a href="#Tomcat" class="headerlink" title="Tomcat"></a>Tomcat</h1><p>开一下8080端口，然后把项目带上lib打包放到tomcat&#x2F;webapps&#x2F;ROOT下，nginx也要改一下root，Tomcat的热部署应该是默认开启的</p>
+<h1 id="Tomcat"><a href="#Tomcat" class="headerlink" title="Tomcat"></a>Tomcat</h1><p>开一下8080端口，然后把项目带上lib打包放到tomcat&#x2F;webapps&#x2F;ROOT下，Tomcat的热部署应该是默认开启的</p>
 
       
     </div>
