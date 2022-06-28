@@ -20,22 +20,23 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="link: java-web-test 网站没有做加密，请不要输入敏感信息！！！ 配置环境：Nginx+Tomcat+JSP+Servlet+MySQLVPS：vultr 上海连接日本服务器的RTT大约130~140域名：namecheap工具：IDEA，VS Code（Remote-SSH extension），Navicat，PuTTY 连接服务器上的MySQL在MySQL安装完成后，新建用户">
+  <meta name="description" content="预备工作准备一个github账号 准备一个本地的hexo空文件夹 无敌的VScode（或者无敌的文本编辑器） 良好的网络环境 默认使用windows 若有任何疑问，请参考hexo官方文档 https:&#x2F;&#x2F;hexo.io&#x2F;zh-cn&#x2F;docs&#x2F;index.html 建立你的Github Pages每个github账号都能建立一个且仅一个Github Pages。 登录github后，新建一个项目，命">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaWeb大作业遇到的一些问题">
-<meta property="og:url" content="http://example.com/2022/06/24/java-web-starter/index.html">
+<meta property="og:title" content="使用Hexo在Github Pages搭建个人博客">
+<meta property="og:url" content="http://example.com/2022/06/28/hello-hexo/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="link: java-web-test 网站没有做加密，请不要输入敏感信息！！！ 配置环境：Nginx+Tomcat+JSP+Servlet+MySQLVPS：vultr 上海连接日本服务器的RTT大约130~140域名：namecheap工具：IDEA，VS Code（Remote-SSH extension），Navicat，PuTTY 连接服务器上的MySQL在MySQL安装完成后，新建用户">
+<meta property="og:description" content="预备工作准备一个github账号 准备一个本地的hexo空文件夹 无敌的VScode（或者无敌的文本编辑器） 良好的网络环境 默认使用windows 若有任何疑问，请参考hexo官方文档 https:&#x2F;&#x2F;hexo.io&#x2F;zh-cn&#x2F;docs&#x2F;index.html 建立你的Github Pages每个github账号都能建立一个且仅一个Github Pages。 登录github后，新建一个项目，命">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-06-24T15:47:57.000Z">
-<meta property="article:modified_time" content="2022-06-25T08:16:45.257Z">
+<meta property="article:published_time" content="2022-06-28T14:47:47.000Z">
+<meta property="article:modified_time" content="2022-06-28T16:07:43.947Z">
 <meta property="article:author" content="青山蓝山">
-<meta property="article:tag" content="Linux">
-<meta property="article:tag" content="Tomcat">
-<meta property="article:tag" content="搬运">
+<meta property="article:tag" content="Web">
+<meta property="article:tag" content="Github Pages">
+<meta property="article:tag" content="Hexo">
+<meta property="article:tag" content="Blog">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/2022/06/24/java-web-starter/">
+<link rel="canonical" href="http://example.com/2022/06/28/hello-hexo/">
 
 
 <script id="page-configurations">
@@ -48,7 +49,7 @@
   };
 </script>
 
-  <title>JavaWeb大作业遇到的一些问题 | Hexo</title>
+  <title>使用Hexo在Github Pages搭建个人博客 | Hexo</title>
   
 
 
@@ -163,7 +164,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/06/24/java-web-starter/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/06/28/hello-hexo/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -176,7 +177,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          JavaWeb大作业遇到的一些问题
+          使用Hexo在Github Pages搭建个人博客
         </h1>
 
         <div class="post-meta">
@@ -186,14 +187,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2022-06-24 23:47:57" itemprop="dateCreated datePublished" datetime="2022-06-24T23:47:57+08:00">2022-06-24</time>
+              <time title="创建时间：2022-06-28 22:47:47" itemprop="dateCreated datePublished" datetime="2022-06-28T22:47:47+08:00">2022-06-28</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-06-25 16:16:45" itemprop="dateModified" datetime="2022-06-25T16:16:45+08:00">2022-06-25</time>
+                <time title="修改时间：2022-06-29 00:07:43" itemprop="dateModified" datetime="2022-06-29T00:07:43+08:00">2022-06-29</time>
               </span>
 
           
@@ -207,13 +208,66 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>link: <a target="_blank" rel="noopener" href="https://java-web-test.qingshanlanshan.com/">java-web-test</a></p>
-<p>网站没有做加密，请不要输入敏感信息！！！</p>
-<h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><p>环境：Nginx+Tomcat+JSP+Servlet+MySQL<br>VPS：vultr 上海连接日本服务器的RTT大约130~140<br>域名：namecheap<br>工具：IDEA，VS Code（Remote-SSH extension），Navicat，PuTTY</p>
-<h1 id="连接服务器上的MySQL"><a href="#连接服务器上的MySQL" class="headerlink" title="连接服务器上的MySQL"></a>连接服务器上的MySQL</h1><p>在MySQL安装完成后，新建用户并授权<br>在&#x2F;etc&#x2F;mysql&#x2F;mysql.conf.d&#x2F;mysqld.cnf中，修改bind-address &#x3D; 127.0.0.1（或者直接注释掉）<br>开放ufw的3306端口</p>
-<h1 id="Nginx"><a href="#Nginx" class="headerlink" title="Nginx"></a>Nginx</h1><p>将jsp等动态资源通过proxy_pass <a href="http://127.0.0.1:8080反代到Tomcat服务器，而静态资源不经过Tomcat，error">http://127.0.0.1:8080反代到Tomcat服务器，而静态资源不经过Tomcat，error</a> page也直接交给nginx，理论上减轻了服务器的压力，实际上，笑死，我就一个vps，而且vcpu使用率一直个位数……nginx设置完之后记得nginx -s reload<br>如果出现静态资源不显示的问题，试试在nginx的conf里，把user改成root</p>
-<p>jsp和servlet比较严重的问题是我不会js和json…用别的凑合下好像还行？</p>
-<h1 id="Tomcat"><a href="#Tomcat" class="headerlink" title="Tomcat"></a>Tomcat</h1><p>开一下8080端口，然后把项目带上lib打包放到tomcat&#x2F;webapps&#x2F;ROOT下，Tomcat的热部署应该是默认开启的</p>
+        <h1 id="预备工作"><a href="#预备工作" class="headerlink" title="预备工作"></a>预备工作</h1><p>准备一个github账号</p>
+<p>准备一个本地的hexo空文件夹</p>
+<p>无敌的VScode（或者无敌的文本编辑器）</p>
+<p>良好的网络环境</p>
+<p>默认使用windows</p>
+<p>若有任何疑问，请参考hexo官方文档 <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/index.html">https://hexo.io/zh-cn/docs/index.html</a></p>
+<h1 id="建立你的Github-Pages"><a href="#建立你的Github-Pages" class="headerlink" title="建立你的Github Pages"></a>建立你的Github Pages</h1><p>每个github账号都能建立一个且仅一个Github Pages。</p>
+<p>登录github后，新建一个项目，命名为<code>username.github.io</code>，这里username是你的账号名字，其他设置全都用默认的。新建后，你可以更改主题。</p>
+<p>在项目的environment中，看到github-pages的状态是active就完成了，你可以访问<code>username.github.io</code>查看你的博客。</p>
+<h1 id="安装Node-js和git"><a href="#安装Node-js和git" class="headerlink" title="安装Node.js和git"></a>安装Node.js和git</h1><p>node.js的下载地址：<a target="_blank" rel="noopener" href="https://nodejs.org/zh-cn/download/">https://nodejs.org/zh-cn/download/</a></p>
+<p>安装完成后，使用<code>node -v</code>，若出现node.js版本号即成功</p>
+<p>git的下载地址：<a target="_blank" rel="noopener" href="https://git-scm.com/download/win">https://git-scm.com/download/win</a></p>
+<p>安装完成后，使用<code>git --version</code>，出现git版本即成功</p>
+<h1 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h1><p>如果是vscode用户，可以在hexo目录下打开vscode，使用vscode完成后续内容</p>
+<p>在hexo目录下打开命令行，输入：<code>npm install -g hexo-cli</code></p>
+<p>安装完成后，使用hexo -v，出现版本信息即安装成功</p>
+<p>使用<code>hexo init</code>完成初始化</p>
+<p>使用<code>npm install</code>安装依赖</p>
+<p>完成后，hexo文件夹的目录应为</p>
+<pre><code>.
+├── _config.yml
+├── package.json
+├── scaffolds
+├── source
+|   ├── _drafts
+|   └── _posts
+└── themes
+</code></pre>
+<p>使用<code>hexo g</code>可以生成网页内容，再使用<code>hexo s</code>即可在 <a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000</a> 上预览你的博客</p>
+<p>安装hexo-deployer-git，方便后续部署</p>
+<pre><code>npm i hexo-deployer-git
+</code></pre>
+<h1 id="部署到Github"><a href="#部署到Github" class="headerlink" title="部署到Github"></a>部署到Github</h1><p>在命令行中输入：</p>
+<pre><code>git config --global user.name &quot;name&quot;
+git config --global user.email &quot;email&quot;
+</code></pre>
+<p>其中name和email是你的github账号的名字和邮箱<br>生成ssh key</p>
+<pre><code>ssh-keygen -t rsa -C &quot;email&quot;
+</code></pre>
+<p>在<a target="_blank" rel="noopener" href="https://github.com/settings/keys">github-setting-key</a>中新建一个ssh key</p>
+<p>输入</p>
+<pre><code>cat ~/.ssh/id_rsa.pub
+</code></pre>
+<p>将内容复制到github的ssh key中并保存</p>
+<p>打开hexo目录下的<code>_config.yml</code>文件，这是hexo的设置文件，在最下面的deploy作如下修改：</p>
+<pre><code>deploy:
+    type: git
+    repository: https://github.com/name/name.github.io
+    branch: master
+</code></pre>
+<p>先使用<code>hexo g</code>在本地完成修改的内容的生成，再使用<code>hexo d</code>部署到github</p>
+<h1 id="部署到其他域名"><a href="#部署到其他域名" class="headerlink" title="部署到其他域名"></a>部署到其他域名</h1><p>以<a target="_blank" rel="noopener" href="http://blog.qingshanlanshan.com/">blog.qingshanlanshan.com</a>为例</p>
+<p>首先购买域名，国内如腾讯云、阿里云等均可，需要备案，国外如namecheap、godaddy等均可</p>
+<p>添加一条CNAME记录，host为你的二级域名，如blog，value为<code>name.github.io.</code></p>
+<p>在hexo目录下的source文件夹中，新建一个名为<code>CNAME</code>的文件，内容为你的域名，如<code>blog.qingshanlanshan.com</code></p>
+<p>使用<code>hexo g</code>,<code>hexo d</code>将本地修改更新到github</p>
+<h1 id="更改hexo主题"><a href="#更改hexo主题" class="headerlink" title="更改hexo主题"></a>更改hexo主题</h1><p>hexo的主题可在 <a target="_blank" rel="noopener" href="https://hexo.io/themes/">https://hexo.io/themes/</a> 选择，按照相应说明安装</p>
+<p>安装完成后，主题会位于hexo目录下的themes目录中</p>
+<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><p>hexo的设置在hexo目录下的<code>_config.yml</code>中，主题的设置在<code>hexo/theme/theme_name</code>目录下的<code>_config.yml</code>中，可以自行修改，修改后需使用<code>hexo g</code>,<code>hexo d</code>部署</p>
+<p>博客的内容位于<code>hexo/source</code>中，其中文章在<code>_posts</code>中，为markdown格式，可以通过<code>hexo new post PostTitle</code>新建文章</p>
 
     </div>
 
@@ -223,9 +277,10 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/Linux/" rel="tag"># Linux</a>
-              <a href="/tags/Tomcat/" rel="tag"># Tomcat</a>
-              <a href="/tags/%E6%90%AC%E8%BF%90/" rel="tag"># 搬运</a>
+              <a href="/tags/Web/" rel="tag"># Web</a>
+              <a href="/tags/Github-Pages/" rel="tag"># Github Pages</a>
+              <a href="/tags/Hexo/" rel="tag"># Hexo</a>
+              <a href="/tags/Blog/" rel="tag"># Blog</a>
           </div>
 
         
@@ -233,11 +288,11 @@
 
         
     <div class="post-nav">
-      <div class="post-nav-item"></div>
       <div class="post-nav-item">
-    <a href="/2022/06/24/how-to-install-tomcat-9-on-linux/" rel="next" title="搬运：在Linux上安装Tomcat">
-      搬运：在Linux上安装Tomcat <i class="fa fa-chevron-right"></i>
+    <a href="/2022/06/25/top/" rel="prev" title="置顶">
+      <i class="fa fa-chevron-left"></i> 置顶
     </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -296,7 +351,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE"><span class="nav-number">1.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BF%9E%E6%8E%A5%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E7%9A%84MySQL"><span class="nav-number">2.</span> <span class="nav-text">连接服务器上的MySQL</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Nginx"><span class="nav-number">3.</span> <span class="nav-text">Nginx</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Tomcat"><span class="nav-number">4.</span> <span class="nav-text">Tomcat</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%A2%84%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="nav-number">1.</span> <span class="nav-text">预备工作</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BB%BA%E7%AB%8B%E4%BD%A0%E7%9A%84Github-Pages"><span class="nav-number">2.</span> <span class="nav-text">建立你的Github Pages</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%85Node-js%E5%92%8Cgit"><span class="nav-number">3.</span> <span class="nav-text">安装Node.js和git</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%85Hexo"><span class="nav-number">4.</span> <span class="nav-text">安装Hexo</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%83%A8%E7%BD%B2%E5%88%B0Github"><span class="nav-number">5.</span> <span class="nav-text">部署到Github</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%83%A8%E7%BD%B2%E5%88%B0%E5%85%B6%E4%BB%96%E5%9F%9F%E5%90%8D"><span class="nav-number">6.</span> <span class="nav-text">部署到其他域名</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9B%B4%E6%94%B9hexo%E4%B8%BB%E9%A2%98"><span class="nav-number">7.</span> <span class="nav-text">更改hexo主题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%B6%E4%BB%96"><span class="nav-number">8.</span> <span class="nav-text">其他</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

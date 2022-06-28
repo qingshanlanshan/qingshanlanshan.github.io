@@ -219,6 +219,130 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/06/28/hello-hexo/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="青山蓝山">
+      <meta itemprop="description" content="个人博客 主要用以学习记录">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/06/28/hello-hexo/" class="post-title-link" itemprop="url">使用Hexo在Github Pages搭建个人博客</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-06-28 22:47:47" itemprop="dateCreated datePublished" datetime="2022-06-28T22:47:47+08:00">2022-06-28</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-06-29 00:07:43" itemprop="dateModified" datetime="2022-06-29T00:07:43+08:00">2022-06-29</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="预备工作"><a href="#预备工作" class="headerlink" title="预备工作"></a>预备工作</h1><p>准备一个github账号</p>
+<p>准备一个本地的hexo空文件夹</p>
+<p>无敌的VScode（或者无敌的文本编辑器）</p>
+<p>良好的网络环境</p>
+<p>默认使用windows</p>
+<p>若有任何疑问，请参考hexo官方文档 <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/index.html">https://hexo.io/zh-cn/docs/index.html</a></p>
+<h1 id="建立你的Github-Pages"><a href="#建立你的Github-Pages" class="headerlink" title="建立你的Github Pages"></a>建立你的Github Pages</h1><p>每个github账号都能建立一个且仅一个Github Pages。</p>
+<p>登录github后，新建一个项目，命名为<code>username.github.io</code>，这里username是你的账号名字，其他设置全都用默认的。新建后，你可以更改主题。</p>
+<p>在项目的environment中，看到github-pages的状态是active就完成了，你可以访问<code>username.github.io</code>查看你的博客。</p>
+<h1 id="安装Node-js和git"><a href="#安装Node-js和git" class="headerlink" title="安装Node.js和git"></a>安装Node.js和git</h1><p>node.js的下载地址：<a target="_blank" rel="noopener" href="https://nodejs.org/zh-cn/download/">https://nodejs.org/zh-cn/download/</a></p>
+<p>安装完成后，使用<code>node -v</code>，若出现node.js版本号即成功</p>
+<p>git的下载地址：<a target="_blank" rel="noopener" href="https://git-scm.com/download/win">https://git-scm.com/download/win</a></p>
+<p>安装完成后，使用<code>git --version</code>，出现git版本即成功</p>
+<h1 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h1><p>如果是vscode用户，可以在hexo目录下打开vscode，使用vscode完成后续内容</p>
+<p>在hexo目录下打开命令行，输入：<code>npm install -g hexo-cli</code></p>
+<p>安装完成后，使用hexo -v，出现版本信息即安装成功</p>
+<p>使用<code>hexo init</code>完成初始化</p>
+<p>使用<code>npm install</code>安装依赖</p>
+<p>完成后，hexo文件夹的目录应为</p>
+<pre><code>.
+├── _config.yml
+├── package.json
+├── scaffolds
+├── source
+|   ├── _drafts
+|   └── _posts
+└── themes
+</code></pre>
+<p>使用<code>hexo g</code>可以生成网页内容，再使用<code>hexo s</code>即可在 <a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000</a> 上预览你的博客</p>
+<p>安装hexo-deployer-git，方便后续部署</p>
+<pre><code>npm i hexo-deployer-git
+</code></pre>
+<h1 id="部署到Github"><a href="#部署到Github" class="headerlink" title="部署到Github"></a>部署到Github</h1><p>在命令行中输入：</p>
+<pre><code>git config --global user.name &quot;name&quot;
+git config --global user.email &quot;email&quot;
+</code></pre>
+<p>其中name和email是你的github账号的名字和邮箱<br>生成ssh key</p>
+<pre><code>ssh-keygen -t rsa -C &quot;email&quot;
+</code></pre>
+<p>在<a target="_blank" rel="noopener" href="https://github.com/settings/keys">github-setting-key</a>中新建一个ssh key</p>
+<p>输入</p>
+<pre><code>cat ~/.ssh/id_rsa.pub
+</code></pre>
+<p>将内容复制到github的ssh key中并保存</p>
+<p>打开hexo目录下的<code>_config.yml</code>文件，这是hexo的设置文件，在最下面的deploy作如下修改：</p>
+<pre><code>deploy:
+    type: git
+    repository: https://github.com/name/name.github.io
+    branch: master
+</code></pre>
+<p>先使用<code>hexo g</code>在本地完成修改的内容的生成，再使用<code>hexo d</code>部署到github</p>
+<h1 id="部署到其他域名"><a href="#部署到其他域名" class="headerlink" title="部署到其他域名"></a>部署到其他域名</h1><p>以<a target="_blank" rel="noopener" href="http://blog.qingshanlanshan.com/">blog.qingshanlanshan.com</a>为例</p>
+<p>首先购买域名，国内如腾讯云、阿里云等均可，需要备案，国外如namecheap、godaddy等均可</p>
+<p>添加一条CNAME记录，host为你的二级域名，如blog，value为<code>name.github.io.</code></p>
+<p>在hexo目录下的source文件夹中，新建一个名为<code>CNAME</code>的文件，内容为你的域名，如<code>blog.qingshanlanshan.com</code></p>
+<p>使用<code>hexo g</code>,<code>hexo d</code>将本地修改更新到github</p>
+<h1 id="更改hexo主题"><a href="#更改hexo主题" class="headerlink" title="更改hexo主题"></a>更改hexo主题</h1><p>hexo的主题可在 <a target="_blank" rel="noopener" href="https://hexo.io/themes/">https://hexo.io/themes/</a> 选择，按照相应说明安装</p>
+<p>安装完成后，主题会位于hexo目录下的themes目录中</p>
+<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><p>hexo的设置在hexo目录下的<code>_config.yml</code>中，主题的设置在<code>hexo/theme/theme_name</code>目录下的<code>_config.yml</code>中，可以自行修改，修改后需使用<code>hexo g</code>,<code>hexo d</code>部署</p>
+<p>博客的内容位于<code>hexo/source</code>中，其中文章在<code>_posts</code>中，为markdown格式，可以通过<code>hexo new post PostTitle</code>新建文章</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2022/06/24/how-to-install-tomcat-9-on-linux/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -440,76 +564,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/06/24/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="青山蓝山">
-      <meta itemprop="description" content="个人博客 主要用以学习记录">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/06/24/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-06-24 23:42:25" itemprop="dateCreated datePublished" datetime="2022-06-24T23:42:25+08:00">2022-06-24</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
 
@@ -585,7 +639,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
